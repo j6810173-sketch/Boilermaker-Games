@@ -1,7 +1,5 @@
 
-import { Game } from './types';
-
-export const GAMES: Game[] = [
+export const GAMES = [
   {
     id: '2048',
     title: '2048',
@@ -92,4 +90,4 @@ export const GAMES: Game[] = [
   }
 ];
 
-export const CATEGORIES: string[] = ['All', 'Action', 'Puzzle', 'Strategy', 'Sports', 'Arcade', 'IO'];
+export const CATEGORIES = ['All', 'Action', 'Puzzle', 'Strategy', 'Sports', 'Arcade', 'IO'];

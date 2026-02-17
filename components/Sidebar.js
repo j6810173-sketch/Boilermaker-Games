@@ -1,27 +1,31 @@
 
 import React from 'react';
-import { CATEGORIES } from '../constants';
+import htm from 'htm';
+
+const html = htm.bind(React.createElement);
 
 const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
-  return (
+  const CATEGORIES = ['All', 'Action', 'Puzzle', 'Strategy', 'Sports', 'Arcade', 'IO'];
+  
+  return html`
     <aside className="hidden lg:block w-64 h-[calc(100vh-80px)] sticky top-20 p-4 overflow-y-auto">
       <div className="space-y-6">
         <div>
           <h3 className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4 px-4">Categories</h3>
           <div className="space-y-1">
-            {CATEGORIES.map((category) => (
+            ${CATEGORIES.map((category) => html`
               <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`w-full flex items-center justify-between px-4 py-2 rounded-xl text-sm font-medium transition-all ${
+                key=${category}
+                onClick=${() => setSelectedCategory(category)}
+                className=${`w-full flex items-center justify-between px-4 py-2 rounded-xl text-sm font-medium transition-all ${
                   selectedCategory === category 
                     ? 'bg-indigo-600 text-white shadow-lg shadow-indigo-600/20' 
                     : 'text-slate-400 hover:bg-slate-800 hover:text-slate-200'
                 }`}
               >
-                {category}
+                ${category}
               </button>
-            ))}
+            `)}
           </div>
         </div>
 
@@ -33,7 +37,7 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => {
         </div>
       </div>
     </aside>
-  );
+  `;
 };
 
 export default Sidebar;

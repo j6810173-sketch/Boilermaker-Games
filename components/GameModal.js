@@ -1,5 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
+import htm from 'htm';
+
+const html = htm.bind(React.createElement);
 
 const GameModal = ({ game, onClose }) => {
   const [isFullScreen, setIsFullScreen] = useState(false);
@@ -14,38 +17,38 @@ const GameModal = ({ game, onClose }) => {
 
   if (!game) return null;
 
-  return (
+  return html`
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-0 sm:p-4 bg-black/90 backdrop-blur-sm">
-      <div className={`relative w-full h-full ${isFullScreen ? 'max-w-none max-h-none' : 'max-w-6xl max-h-[90vh]'} bg-slate-900 flex flex-col rounded-none sm:rounded-2xl overflow-hidden shadow-2xl`}>
+      <div className=${`relative w-full h-full ${isFullScreen ? 'max-w-none max-h-none' : 'max-w-6xl max-h-[90vh]'} bg-slate-900 flex flex-col rounded-none sm:rounded-2xl overflow-hidden shadow-2xl`}>
         <div className="flex items-center justify-between px-6 py-4 bg-slate-800/50 border-b border-slate-700">
           <div className="flex items-center gap-3">
              <div className="w-8 h-8 bg-indigo-600 rounded flex items-center justify-center">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
             <div>
-              <h2 className="text-xl font-bold text-white">{game.title}</h2>
-              <p className="text-xs text-slate-400">{game.category}</p>
+              <h2 className="text-xl font-bold text-white">${game.title}</h2>
+              <p className="text-xs text-slate-400">${game.category}</p>
             </div>
           </div>
           
           <div className="flex items-center gap-2">
             <button 
-              onClick={() => setIsFullScreen(!isFullScreen)}
+              onClick=${() => setIsFullScreen(!isFullScreen)}
               className="p-2 text-slate-400 hover:text-white hover:bg-slate-700 rounded-lg transition-all"
               title="Toggle Cinema Mode"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
               </svg>
             </button>
             <button 
-              onClick={onClose}
+              onClick=${onClose}
               className="p-2 text-slate-400 hover:text-rose-500 hover:bg-rose-500/10 rounded-lg transition-all"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
@@ -53,14 +56,14 @@ const GameModal = ({ game, onClose }) => {
 
         <div className="flex-1 bg-black relative">
           <iframe 
-            src={game.url}
+            src=${game.url}
             className="absolute inset-0 w-full h-full border-none"
-            title={game.title}
+            title=${game.title}
             allowFullScreen
           />
         </div>
 
-        {!isFullScreen && (
+        ${!isFullScreen && html`
           <div className="hidden sm:flex items-center justify-between px-6 py-4 bg-slate-800/30">
             <div className="flex items-center gap-4">
               <button className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors">
@@ -80,10 +83,10 @@ const GameModal = ({ game, onClose }) => {
               Powered by Nexus Arcade Engine
             </div>
           </div>
-        )}
+        `}
       </div>
     </div>
-  );
+  `;
 };
 
 export default GameModal;

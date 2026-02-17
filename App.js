@@ -1,74 +1,84 @@
 
-import React, { useState, useMemo } from 'react';
-import Header from './components/Header';
-import GameCard from './components/GameCard';
-import GameModal from './components/GameModal';
-import Sidebar from './components/Sidebar';
-import { GAMES } from './constants';
+import React, { useState, useMemo, useEffect } from 'react';
+import htm from 'htm';
+import Header from './components/Header.js';
+import GameCard from './components/GameCard.js';
+import GameModal from './components/GameModal.js';
+import Sidebar from './components/Sidebar.js';
+
+const html = htm.bind(React.createElement);
 
 const App = () => {
+  const [games, setGames] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [activeGame, setActiveGame] = useState(null);
 
+  useEffect(() => {
+    fetch('./games.json')
+      .then(res => res.json())
+      .then(data => setGames(data))
+      .catch(err => console.error('Failed to load games:', err));
+  }, []);
+
   const filteredGames = useMemo(() => {
-    return GAMES.filter(game => {
+    return games.filter(game => {
       const matchesSearch = game.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                           game.description.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesCategory = selectedCategory === 'All' || game.category === selectedCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [searchQuery, selectedCategory]);
+  }, [games, searchQuery, selectedCategory]);
 
-  return (
+  return html`
     <div className="min-h-screen flex flex-col bg-slate-950 text-slate-100">
-      <Header searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+      <${Header} searchQuery=${searchQuery} setSearchQuery=${setSearchQuery} />
 
       <div className="flex max-w-7xl mx-auto w-full px-4 sm:px-8 py-8">
-        <Sidebar 
-          selectedCategory={selectedCategory} 
-          setSelectedCategory={setSelectedCategory} 
+        <${Sidebar} 
+          selectedCategory=${selectedCategory} 
+          setSelectedCategory=${setSelectedCategory} 
         />
 
         <main className="flex-1 lg:pl-8">
           <div className="flex lg:hidden overflow-x-auto pb-6 gap-2 no-scrollbar">
-            {['All', 'Action', 'Puzzle', 'Strategy', 'Sports', 'Arcade', 'IO'].map(cat => (
+            ${['All', 'Action', 'Puzzle', 'Strategy', 'Sports', 'Arcade', 'IO'].map(cat => html`
               <button
-                key={cat}
-                onClick={() => setSelectedCategory(cat)}
-                className={`whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                key=${cat}
+                onClick=${() => setSelectedCategory(cat)}
+                className=${`whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all ${
                   selectedCategory === cat ? 'bg-indigo-600 text-white' : 'bg-slate-800 text-slate-400'
                 }`}
               >
-                {cat}
+                ${cat}
               </button>
-            ))}
+            `)}
           </div>
 
           <div className="mb-8">
             <h2 className="text-3xl font-orbitron font-bold text-white mb-2">
-              {selectedCategory === 'All' ? 'Trending Games' : `${selectedCategory} Games`}
+              ${selectedCategory === 'All' ? 'Trending Games' : `${selectedCategory} Games`}
             </h2>
             <p className="text-slate-400 text-sm">
               Discover the best unblocked games on the web.
             </p>
           </div>
 
-          {filteredGames.length > 0 ? (
+          ${filteredGames.length > 0 ? html`
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
-              {filteredGames.map(game => (
-                <GameCard 
-                  key={game.id} 
-                  game={game} 
-                  onPlay={setActiveGame} 
+              ${filteredGames.map(game => html`
+                <${GameCard} 
+                  key=${game.id} 
+                  game=${game} 
+                  onPlay=${setActiveGame} 
                 />
-              ))}
+              `)}
             </div>
-          ) : (
+          ` : html`
             <div className="flex flex-col items-center justify-center py-20 text-center">
               <div className="w-16 h-16 bg-slate-800 rounded-2xl flex items-center justify-center mb-4 text-slate-600">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.172 9.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-slate-300">No games found</h3>
@@ -76,13 +86,13 @@ const App = () => {
                 We couldn't find any games matching your current search or filters.
               </p>
               <button 
-                onClick={() => {setSearchQuery(''); setSelectedCategory('All');}}
+                onClick=${() => {setSearchQuery(''); setSelectedCategory('All');}}
                 className="mt-6 text-indigo-400 hover:text-indigo-300 font-bold text-sm underline"
               >
                 Clear all filters
               </button>
             </div>
-          )}
+          `}
         </main>
       </div>
 
@@ -92,7 +102,7 @@ const App = () => {
              <div className="flex items-center gap-2">
               <div className="w-6 h-6 bg-slate-700 rounded flex items-center justify-center">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                 </svg>
               </div>
               <span className="font-orbitron font-bold tracking-tighter text-slate-300">NEXUS ARCADE</span>
@@ -109,14 +119,14 @@ const App = () => {
         </div>
       </footer>
 
-      {activeGame && (
-        <GameModal 
-          game={activeGame} 
-          onClose={() => setActiveGame(null)} 
+      ${activeGame && html`
+        <${GameModal} 
+          game=${activeGame} 
+          onClose=${() => setActiveGame(null)} 
         />
-      )}
+      `}
     </div>
-  );
+  `;
 };
 
 export default App;

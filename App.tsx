@@ -5,12 +5,11 @@ import GameCard from './components/GameCard';
 import GameModal from './components/GameModal';
 import Sidebar from './components/Sidebar';
 import { GAMES } from './constants';
-import { Game } from './types';
 
-const App: React.FC = () => {
+const App = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [activeGame, setActiveGame] = useState<Game | null>(null);
+  const [activeGame, setActiveGame] = useState(null);
 
   const filteredGames = useMemo(() => {
     return GAMES.filter(game => {
@@ -32,7 +31,6 @@ const App: React.FC = () => {
         />
 
         <main className="flex-1 lg:pl-8">
-          {/* Mobile Categories Scroller */}
           <div className="flex lg:hidden overflow-x-auto pb-6 gap-2 no-scrollbar">
             {['All', 'Action', 'Puzzle', 'Strategy', 'Sports', 'Arcade', 'IO'].map(cat => (
               <button
