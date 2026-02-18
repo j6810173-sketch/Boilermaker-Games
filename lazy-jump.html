@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Jump | Boiler Arcade</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            /* Most Unity WebGL games look better with a defined aspect ratio on desktop, 
+               but for unblocked portals, full-screen coverage is standard. */
+        }
+    </style>
+</head>
+<body>
+    <iframe id="game-iframe" 
+            src="https://petezah.global.ssl.fastly.net/storage/ag/g/lazy-jump/" 
+            frameborder="0" 
+            scrolling="no" 
+            allow="autoplay; fullscreen; keyboard" 
+            allowfullscreen>
+    </iframe>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="https://funhtml5games.com/kartz/">
+  <title>Super Mario Kart | Boiler Arcade</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    canvas {
+      image-rendering: pixelated;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+  </style>
+  <script type="text/javascript" src="kartz.js"></script>
+</head>
+<body onload="run();">
+  <canvas id="canvas" width="320" height="200" tabindex="1" style="background: rgb(68, 68, 153); outline: none; width: 664px; height: 415px;"></canvas>
+  <script>
+    // Optional: Auto-focus canvas so keys work immediately
+    window.addEventListener('load', () => {
+      document.getElementById('canvas').focus();
+    });
+  </script>
+</body>
+</html>
