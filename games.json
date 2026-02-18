@@ -1,91 +1,37 @@
-
 [
-  {
-    "id": "2048",
-    "title": "2048",
-    "category": "Puzzle",
-    "url": "https://play2048.co/",
-    "thumbnail": "https://picsum.photos/id/1/400/300",
-    "description": "Join the numbers and get to the 2048 tile!"
-  },
-  {
-    "id": "hextris",
-    "title": "Hextris",
-    "category": "Arcade",
-    "url": "https://hextris.io/",
-    "thumbnail": "https://picsum.photos/id/2/400/300",
-    "description": "Fast-paced puzzle game inspired by Tetris."
-  },
-  {
-    "id": "cookie-clicker",
-    "title": "Cookie Clicker",
-    "category": "Strategy",
-    "url": "https://orteil.dashnet.org/cookieclicker/",
-    "thumbnail": "https://picsum.photos/id/12/400/300",
-    "description": "The ultimate idle game. Bake all the cookies!"
-  },
-  {
-    "id": "paper-io-2",
-    "title": "Paper.io 2",
-    "category": "IO",
-    "url": "https://paper-io.com/",
-    "thumbnail": "https://picsum.photos/id/4/400/300",
-    "description": "Capture as much territory as possible."
-  },
-  {
-    "id": "moto-x3m",
-    "title": "Moto X3M",
-    "category": "Sports",
-    "url": "https://moto-x3m.io/",
-    "thumbnail": "https://picsum.photos/id/5/400/300",
-    "description": "Bike racing game with challenging levels and stunts."
-  },
-  {
-    "id": "flappy-bird",
-    "title": "Flappy Bird",
-    "category": "Arcade",
-    "url": "https://flappybird.io/",
-    "thumbnail": "https://picsum.photos/id/6/400/300",
-    "description": "Classic bird-flying frustration at its finest."
-  },
   {
     "id": "slope",
     "title": "Slope",
-    "category": "Action",
-    "url": "https://slope.io/",
-    "thumbnail": "https://picsum.photos/id/7/400/300",
-    "description": "Endless running game with a neon ball on a slope."
-  },
-  {
-    "id": "slither-io",
-    "title": "Slither.io",
-    "category": "IO",
-    "url": "https://slither.io/",
-    "thumbnail": "https://picsum.photos/id/8/400/300",
-    "description": "Eat glowing orbs and grow your snake."
-  },
-  {
-    "id": "crossy-road",
-    "title": "Crossy Road",
     "category": "Arcade",
-    "url": "https://www.crossyroad.com/",
-    "thumbnail": "https://picsum.photos/id/9/400/300",
-    "description": "Why did the chicken cross the road?"
+    "url": "https://kdata1.com/2020/05/slope/",
+    "description": "The ultimate 3D speed challenge. Maneuver a ball down a steep slope, avoiding obstacles and staying on course in this high-octane endless runner."
   },
   {
-    "id": "tetris",
-    "title": "Tetris",
-    "category": "Puzzle",
-    "url": "https://tetris.com/play-tetris",
-    "thumbnail": "https://picsum.photos/id/10/400/300",
-    "description": "The original block-stacking puzzle game."
-  },
-  {
-    "id": "drift-hunters",
-    "title": "Drift Hunters",
+    "id": "retro-bowl",
+    "title": "Retro Bowl",
     "category": "Sports",
-    "url": "https://drift-hunters.io/",
-    "thumbnail": "https://picsum.photos/id/11/400/300",
-    "description": "High-speed drifting simulator."
+    "url": "https://game316009.konggames.com/gamez/0031/6009/live/index.html",
+    "description": "Manage your NFL team and lead them to glory. Classic 8-bit graphics combined with deep tactical management and arcade-style gameplay."
+  },
+  {
+    "id": "minecraft",
+    "title": "Minecraft",
+    "category": "Strategy",
+    "url": "data:text/html;charset=utf-8,%3Chtml%3E%3Chead%3E%3Cstyle%3Ebody%2Chtml%2Ciframe%7Bmargin%3A0%3Bpadding%3A0%3Bheight%3A100%25%3Bwidth%3A100%25%3Boverflow%3Ahidden%7D.forceIosScrolling%7Boverflow%3Ascroll%3B-webkit-overflow-scrolling%3Atouch%7D%3C%2Fstyle%3E%3Cscript%20src%3D%22https%3A%2F%2Fapis.google.com%2Fjs%2Fapi.js%3FcheckCookie%3D1%22%20async%3D%22%22%3E%3C%2Fscript%3E%3C%2Fhead%3E%3Cbody%3E%3Ciframe%20id%3D%22innerFrame%22%20name%3D%22innerFrame%22%20sandbox%3D%22allow-scripts%20allow-popups%20allow-forms%20allow-same-origin%20allow-popups-to-escape-sandbox%20allow-downloads%20allow-storage-access-by-user-activation%22%20frameborder%3D%220%22%20allowfullscreen%3D%22%22%20src%3D%22https%3A%2F%2Fmaddoxcloud.com%2Fg%2Fminecraft%2F%22%20style%3D%22overflow%3A%20auto%3B%22%3E%3C%2Fiframe%3E%3Cscript%3Efunction%20loadGapi%28%29%7Bvar%20loaderScript%3Ddocument.createElement%28%27script%27%29%3BloaderScript.setAttribute%28%27src%27%2C%27https%3A%2F%2Fapis.google.com%2Fjs%2Fapi.js%3FcheckCookie%3D1%22%29%3BloaderScript.onload%3Dfunction%28%29%7Bthis.onload%3Dfunction%28%29%7B%7D%3BloadGapiClient%28%29%3B%7D%3BloaderScript.onreadystatechange%3Dfunction%28%29%7Bif%28this.readyState%3D%3D%3D%27complete%27%29%7Bthis.onload%28%29%3B%7D%7D%3B%28document.head%7C%7Cdocument.body%7C%7Cdocument.documentElement%29.appendChild%28loaderScript%29%3B%7Dfunction%20updateInnerFrame%28url%2CenableInteraction%2CforceIosScrolling%29%7Bvar%20urlEl%3Ddocument.createElement%28%27a%27%29%3BurlEl.setAttribute%28%27href%27%2Curl%29%3Bif%28urlEl.protocol%21%3D%22https%3A%22%26%26urlEl.protocol%21%3D%22http%3A%22%29%7Breturn%3B%7Dvar%20iframe%3Ddocument.getElementById%28%27innerFrame%27%29%3Biframe.src%3Durl%3Biframe.onload%3Dfunction%28%29%7Bgapi.rpc.call%28%27..%27%2C%27innerFrameLoaded%27%29%3B%7D%3Bif%28enableInteraction%29%7Bif%28forceIosScrolling%29%7Bvar%20iframeParent%3Diframe.parentElement%3BiframeParent.classList.add%28%27forceIosScrolling%27%29%3B%7Delse%7Biframe.style.overflow%3D%27auto%27%3B%7D%7Delse%7Biframe.style.pointerEvents%3D%27none%27%3B%7D%7Dfunction%20updateInnerIframeCode%28userCode%2CenableInteraction%2CforceIosScrolling%29%7Bgapi.rpc.setup%28%27innerFrame%27%29%3Bgapi.rpc.call%28%27innerFrame%27%2C%27updateUserHtmlFrame%27%2Cundefined%2CuserCode%2CenableInteraction%2CforceIosScrolling%29%3B%7Dfunction%20onPostMessage%28ev%29%7Bif%28%21ev.data%7C%7Cev.data%5B%27magic%27%5D%21%3D%27SHIC%27%29%7Breturn%3B%7Dvar%20type%3Dev.data%5B%27type%27%5D%3Bswitch%28type%29%7Bcase%27resize%27%3Avar%20height%3Dev.data%5B%27height%27%5D%3Bgapi.rpc.call%28%27..%27%2C%27resize%27%2Cundefined%2Cheight%29%3B%7D%7Dfunction%20onGapiInitialized%28%29%7Bgapi.rpc.call%28%27..%27%2C%27gapiInitialized%27%29%3Bgapi.rpc.register%28%27updateInnerFrame%27%2CupdateInnerFrame%29%3Bgapi.rpc.register%28%27updateInnerIframeCode%27%2CupdateInnerIframeCode%29%3Bwindow.addEventListener%28%27message%27%2ConPostMessage%29%3B%7Dfunction%20loadGapiClient%28%29%7Bgapi.load%28%27gapi.rpc%27%2ConGapiInitialized%29%3B%7Dif%28document.readyState%3D%3D%3D%27complete%27%29%7BloadGapi%28%29%3B%7Delse%7Bself.addEventListener%28%27load%27%2CloadGapi%29%3B%7D%3C%2Fscript%3E%3C%2Fbody%3E%3C%2Fhtml%3E",
+    "description": "The ultimate sandbox experience. Build, explore, and survive in a world made of blocks. Unleash your creativity in this classic browser version."
+  },
+  {
+    "id": "bitlife",
+    "title": "BitLife",
+    "category": "Arcade",
+    "url": "https://bitlifeonline.io/",
+    "description": "Live your life exactly how you want. Make choices, pursue careers, and see where your decisions lead you in this text-based life simulator."
+  },
+  {
+    "id": "fnaf",
+    "title": "FNAF",
+    "category": "Action",
+    "url": "https://v6p9d9t4.ssl.hwcdn.net/html/1453265/index.html",
+    "description": "Survive the night at Freddy Fazbear's Pizza. Monitor cameras, conserve power, and avoid the animatronics in this intense horror survival classic."
   }
 ]

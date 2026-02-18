@@ -1,21 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexus Arcade | Unblocked Games</title>
-    <!-- Favicon as Data URI to avoid 404 -->
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%234f46e5%22/><path d=%22M50 20L30 55h15l-5 25 30-45h-15z%22 fill=%22white%22/></svg>">
+    <title>Boilermaker Arcade | Purdue Unblocked Games</title>
+    <!-- Purdue Favicon: P symbol -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23000000%22/><text y=%22.9em%22 font-size=%2280%22 font-weight=%22bold%22 fill=%22%23CEB888%22 font-family=%22serif%22 x=%2250%%22 text-anchor=%22middle%22>P</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              purdue: {
+                gold: '#CEB888',
+                goldDark: '#C28E0E',
+                black: '#000000',
+              }
+            }
+          }
+        }
+      }
+    </script>
     <style>
       body {
         font-family: 'Inter', sans-serif;
-        background-color: #0f172a;
+        background-color: #000000;
         color: #f8fafc;
+      }
+      .font-purdue {
+        font-family: 'Bebas Neue', sans-serif;
+        letter-spacing: 0.05em;
       }
       .font-orbitron {
         font-family: 'Orbitron', sans-serif;
@@ -24,14 +42,14 @@
         width: 8px;
       }
       ::-webkit-scrollbar-track {
-        background: #1e293b;
+        background: #000000;
       }
       ::-webkit-scrollbar-thumb {
-        background: #334155;
+        background: #CEB888;
         border-radius: 4px;
       }
       ::-webkit-scrollbar-thumb:hover {
-        background: #475569;
+        background: #C28E0E;
       }
       .no-scrollbar::-webkit-scrollbar {
         display: none;
@@ -52,7 +70,6 @@
   }
 }
 </script>
-    <!-- Entry point for the application -->
     <script type="module" src="index.js"></script>
   </head>
   <body>
