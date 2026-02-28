@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --font-purdue: "Bebas Neue", sans-serif;
+  --color-purdue-gold: #CEB888;
+  --color-purdue-gold-dark: #C28E0E;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-slate-50 font-sans;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #CEB888;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C28E0E;
+}

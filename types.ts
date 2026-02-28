@@ -2,7 +2,7 @@ export interface Game {
   id: string;
   title: string;
   category: string;
-  url: string;
+  iframe: string;
   description: string;
   rating?: number;
 }
